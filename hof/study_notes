@@ -1,0 +1,16 @@
+15> cd('/Users/horo/erlang_lab/hof').   
+/Users/horo/erlang_lab/hof
+ok
+16> c(hof).                             
+{ok,hof}
+17> hof:fold(fun hof:sum/2, [1,2,3], 0).
+6
+18> cd('/Users/horo/erlang_lab/hof').   
+/Users/horo/erlang_lab/hof
+ok
+19> c(hof).                             
+{ok,hof}
+20> hof:fold(fun hof:sum/2, [1,2,3], 0).
+6
+21> hof:fold(fun hof:sum/2, [1,2,3]).   
+6
