@@ -1,0 +1,21 @@
+Erlang R15B02 (erts-5.9.2) [source] [64-bit] [smp:4:4] [async-threads:0] [hipe] [kernel-poll:false] [dtrace]
+
+Eshell V5.9.2  (abort with ^G)
+1> cd('/Users/horo/erlang_lab/hhfuns
+1> ').
+/Users/horo/erlang_lab/hhfuns
+ok
+2> c(hhfuns).
+{ok,hhfuns}
+3> hhfuns:add(hhfuns:one(), hhfuns:two()).
+** exception error: bad function 1
+     in function  hhfuns:add/2 (hhfuns.erl, line 7)
+4> hhfuns:add(fun hhfuns:one/1, fun hhfuns:two/1).
+** exception error: hhfuns:one/1 called with no arguments
+     in function  hhfuns:add/2 (hhfuns.erl, line 7)
+5> hhfuns:add(fun hhfuns:one/0, fun hhfuns:two/0).
+3
+6> hhfuns:increment([1,2,3]).
+[2,3,4]
+7> hhfuns:map(fun hhfuns:incr/1, [1,2,3]).
+[2,3,4]
