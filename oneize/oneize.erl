@@ -3,4 +3,3 @@
 
 oneize([]) -> [];
 oneize([_|T]) -> [1|oneize(T)].
-
