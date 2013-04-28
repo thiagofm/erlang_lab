@@ -1,0 +1,13 @@
+1> cd('/Users/horo/erlang_lab/exceptions
+1> ').
+/Users/horo/erlang_lab/exceptions
+ok
+2> c(exceptions).
+{ok,exceptions}
+3> exceptions:errors(fun() -> erlang:error('damn') end).    
+{error,caught,damn}
+4> exceptions:exits(fun() -> erlang:error('damn') end). 
+** exception error: damn
+     in function  exceptions:exits/1 (exceptions.erl, line 19)
+5> exceptions:exits(fun() -> erlang:exit('damn') end). 
+{exit,caught,damn}
