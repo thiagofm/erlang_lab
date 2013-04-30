@@ -24,3 +24,51 @@ ok
 "Just a flesh wound."
 17> exceptions:black_knight(fun() -> exceptions:sword(5) end).
 "Just a flesh wound."
+
+22> exceptions:whoa().
+{caught,throw,up}
+23> exceptions:im_impressed().
+{caught,throw,up}
+
+24> catch throw(whoa).
+whoa
+25> catch 1/0.
+{'EXIT',{badarith,[{erlang,'/',[1,0],[]},
+                   {erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},
+                   {erl_eval,expr,5,[{file,"erl_eval.erl"},{line,360}]},
+                   {shell,exprs,7,[{file,"shell.erl"},{line,668}]},
+                   {shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},
+                   {shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+26> catch doesnt:exist(a,4).
+{'EXIT',{undef,[{doesnt,exist,[a,4],[]},
+                {erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},
+                {erl_eval,expr,5,[{file,"erl_eval.erl"},{line,360}]},
+                {shell,exprs,7,[{file,"shell.erl"},{line,668}]},
+                {shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},
+                {shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+
+33> exceptions:catcher(3,3).
+1.0
+34> exceptions:catcher(6,9). 
+0.6666666666666666
+35> exceptions:catcher(6,0).
+"uh oh"
+
+37> X = catch 4+2.
+* 1: syntax error before: 'catch'
+37> X = (catch 4+2).
+6
+
+38> catch erlang:boat().
+{'EXIT',{undef,[{erlang,boat,[],[]},
+                {erl_eval,do_apply,6,[{file,"erl_eval.erl"},{line,576}]},
+                {erl_eval,expr,5,[{file,"erl_eval.erl"},{line,360}]},
+                {shell,exprs,7,[{file,"shell.erl"},{line,668}]},
+                {shell,eval_exprs,7,[{file,"shell.erl"},{line,623}]},
+                {shell,eval_loop,3,[{file,"shell.erl"},{line,608}]}]}}
+
+
+47> catch exceptions:one_or_two(1).
+return
+48> catch exceptions:one_or_two(2).
+return
