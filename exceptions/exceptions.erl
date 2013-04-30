@@ -37,3 +37,5 @@ black_knight(Attack) when is_function(Attack, 0) ->
     exit:cut_leg -> "Come on you pansy!";
     _:_ -> "Just a flesh wound."
   end.
+
+talk() -> 'blah blah'.

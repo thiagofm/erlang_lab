@@ -11,3 +11,16 @@ ok
      in function  exceptions:exits/1 (exceptions.erl, line 19)
 5> exceptions:exits(fun() -> erlang:exit('damn') end). 
 {exit,caught,damn}
+
+12> exceptions:black_knight(fun() -> exceptions:sword(2) end).
+"I've had worse."
+13> exceptions:black_knight(fun() -> exceptions:sword(2) end).
+"I've had worse."
+14> exceptions:black_knight(fun() -> exceptions:sword(3) end). 
+"Come on you pansy!"
+15> exceptions:black_knight(fun() -> exceptions:sword(4) end).
+"Just a flesh wound."
+16> exceptions:black_knight(fun() -> exceptions:sword(4) end).
+"Just a flesh wound."
+17> exceptions:black_knight(fun() -> exceptions:sword(5) end).
+"Just a flesh wound."
