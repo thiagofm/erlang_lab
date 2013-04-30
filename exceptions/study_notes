@@ -72,3 +72,6 @@ whoa
 return
 48> catch exceptions:one_or_two(2).
 return
+
+
+The exercise of tree concept is pretty easy: instead of traversing the whole tree to find a value, throw an exception as soon as it is found and catch it.
